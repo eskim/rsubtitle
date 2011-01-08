@@ -1,24 +1,27 @@
 Rsubtitle
 =========
-Ruby video subtitle parser and formatter
+Ruby parser and formatter for video subtitle
 
 Usage
 -----
 
-    > smi = Rsubtitle::SMI.parse "utf8.smi"
-     => #<Rsubtitle::SMI:0x00000100ab47c0>
-    > smi[0]
-     => {:start=>10, :subtitle=>"first", :duration=>7390} 
-    > smi[1]
-     => {:start=>8000, :subtitle=>"second", :duration=>7400} 
-    > smi[3]
-     => nil 
-    > smi.size
-     => 2
+
+    >> smi = Rsubtitle::SMI.parse("test/fixtures/utf8.smi")
+    => #<Rsubtitle::SMI:0x00000100b5ea68>
+    >> smi.entries
+    => [#<struct Rsubtitle::Entry start=10, duration=7390, body="first">, ...]
+    >> smi.entries[0]
+    => #<struct Rsubtitle::Entry start=10, duration=7390, body="first">
+    >> smi.entries[0].start
+    => 10
+    >> smi.entries[0].duration
+    => 7390
+    >> smi.entries[0].body
+    => "first"
 
 
 TODO
 ----
 
 * multi-language support
-* parse html title
+* parse html body
