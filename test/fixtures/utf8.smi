@@ -20,6 +20,8 @@ P { margin-left:8pt; margin-right:8pt; margin-bottom:2pt;
 <SYNC Start=7400><P Class=KRCC>&nbsp;
 <SYNC Start=8000><P Class=KRCC>
 second
-<SYNC Start=15400><P Class=KRCC>&nbsp;
+<SYNC Start=8010><P Class=KRCC>&nbsp;
+<SYNC Start=8000><P Class=KRCC>
+with <b>html</b>
 </BODY>
 </SAMI>

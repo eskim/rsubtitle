@@ -15,3 +15,10 @@ Usage
      => nil 
     > smi.size
      => 2
+
+
+TODO
+----
+
+* multi-language support
+* parse html title

@@ -1,6 +1,19 @@
 module Rsubtitle
 
-  class SMI
+
+  class Subtitle
+    attr_reader :entries
+    
+    def format(type, options = {})
+      ""
+    end
+
+  end
+
+
+
+  class SMI < Subtitle
+
 
     SMI_RE = %r(
       ^<sync\sstart=(\d+)> <p[^>]+> (?:\r?\n)? ( \&nbsp;(?=\r?\n) | (?<=\n).+?(?=\r?\n)  )
@@ -31,7 +44,13 @@ module Rsubtitle
         sub.gsub!(/<[^>]+?>/i, "") # strip tags
         sub.strip!
         
-        @entries << {:start => start, :subtitle => sub, :duration => duration}
+
+        e = Entry.new
+        e.start = start
+        e.body = sub
+        e.duration = duration
+
+        @entries << e
       end
 
     end
@@ -43,6 +62,8 @@ module Rsubtitle
     def [](idx)
       @entries[idx]
     end
+
+
 
   end
 
